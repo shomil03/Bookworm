@@ -14,9 +14,22 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                Text("Books : \(books.count)")
-                ForEach(books){book in
-                    Text(book.name)
+                List{
+                    ForEach(books){book in
+                        NavigationLink( value: book){
+                            HStack{
+                                EmojiRatingView(rating: book.rating)
+                                    .font(.largeTitle)
+                                VStack(alignment: .leading){
+                                    Text(book.name)
+                                        .font(.headline)
+                                    Text(book.author)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                        }
+                    }
+                    
                 }
             }
             .toolbar{
