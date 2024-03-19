@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F33E5FF2BA9CAB40043E858 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E5FE2BA9CAB40043E858 /* DetailView.swift */; };
 		4F52C06F2BA88C7E008B2971 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F52C06E2BA88C7D008B2971 /* Book.swift */; };
 		4F52C0712BA88D05008B2971 /* AddBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F52C0702BA88D05008B2971 /* AddBook.swift */; };
 		4F52C0732BA90F5E008B2971 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F52C0722BA90F5E008B2971 /* RatingView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F33E5FE2BA9CAB40043E858 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4F52C06E2BA88C7D008B2971 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		4F52C0702BA88D05008B2971 /* AddBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBook.swift; sourceTree = "<group>"; };
 		4F52C0722BA90F5E008B2971 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -61,10 +63,11 @@
 			children = (
 				4FADFBDE2BA7190C000FF0DF /* BookwormApp.swift */,
 				4F52C06E2BA88C7D008B2971 /* Book.swift */,
+				4FADFBE02BA7190C000FF0DF /* ContentView.swift */,
 				4F52C0702BA88D05008B2971 /* AddBook.swift */,
 				4F52C0722BA90F5E008B2971 /* RatingView.swift */,
-				4FADFBE02BA7190C000FF0DF /* ContentView.swift */,
 				4F52C0742BA915D0008B2971 /* EmojiRatingView.swift */,
+				4F33E5FE2BA9CAB40043E858 /* DetailView.swift */,
 				4FADFBE22BA7190E000FF0DF /* Assets.xcassets */,
 				4FADFBE42BA7190E000FF0DF /* Preview Content */,
 			);
@@ -152,6 +155,7 @@
 				4F52C0712BA88D05008B2971 /* AddBook.swift in Sources */,
 				4FADFBE12BA7190C000FF0DF /* ContentView.swift in Sources */,
 				4FADFBDF2BA7190C000FF0DF /* BookwormApp.swift in Sources */,
+				4F33E5FF2BA9CAB40043E858 /* DetailView.swift in Sources */,
 				4F52C0732BA90F5E008B2971 /* RatingView.swift in Sources */,
 				4F52C0752BA915D0008B2971 /* EmojiRatingView.swift in Sources */,
 				4F52C06F2BA88C7E008B2971 /* Book.swift in Sources */,

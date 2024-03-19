@@ -28,9 +28,15 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        
                     }
-                    
+                                        
                 }
+                .navigationDestination(for: Book.self){book in
+                    DetailView(book: book)
+                }
+
+                
             }
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing){
