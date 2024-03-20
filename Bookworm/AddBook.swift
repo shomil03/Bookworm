@@ -48,5 +48,14 @@ struct AddBook: View {
 }
 
 #Preview {
-    AddBook()
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    do{
+        let container = try ModelContainer(for: Book.self, configurations: config)
+        return AddBook()
+            .modelContainer(container)
+           
+    }catch{
+        return Text("Error")
+    }
+    
 }

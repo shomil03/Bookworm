@@ -65,9 +65,9 @@
 				4F52C06E2BA88C7D008B2971 /* Book.swift */,
 				4FADFBE02BA7190C000FF0DF /* ContentView.swift */,
 				4F52C0702BA88D05008B2971 /* AddBook.swift */,
+				4F33E5FE2BA9CAB40043E858 /* DetailView.swift */,
 				4F52C0722BA90F5E008B2971 /* RatingView.swift */,
 				4F52C0742BA915D0008B2971 /* EmojiRatingView.swift */,
-				4F33E5FE2BA9CAB40043E858 /* DetailView.swift */,
 				4FADFBE22BA7190E000FF0DF /* Assets.xcassets */,
 				4FADFBE42BA7190E000FF0DF /* Preview Content */,
 			);

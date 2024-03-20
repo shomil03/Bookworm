@@ -10,7 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @State private var isShowingSheet = false
-    @Query var books : [Book]
+    @Query(sort:
+            [SortDescriptor(\Book.rating),
+             SortDescriptor(\Book.author)],
+           animation: .bouncy) var books : [Book]
     var body: some View {
         NavigationStack{
             VStack{
@@ -29,7 +32,8 @@ struct ContentView: View {
                             }
                         }
                         
-                    }
+                    }.onDelete(perform: deleteBook)
+                    
                                         
                 }
                 .navigationDestination(for: Book.self){book in
@@ -39,6 +43,9 @@ struct ContentView: View {
                 
             }
             .toolbar{
+                ToolbarItem(placement: .topBarLeading){
+                    EditButton()
+                }
                 ToolbarItem(placement: .topBarTrailing){
                     Button("Add book" , systemImage: "plus"){
                         isShowingSheet.toggle()
@@ -52,6 +59,12 @@ struct ContentView: View {
                 
         }
         
+    }
+    func deleteBook(at offsets : IndexSet){
+        for offset in offsets{
+            let book = books[offset]
+            modelContext.delete(book)
+        }
     }
 }
 
