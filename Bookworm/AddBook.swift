@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Foundation
 
 struct AddBook: View {
     @Environment(\.modelContext) var modelContext
@@ -16,6 +17,9 @@ struct AddBook: View {
     @State private var review = ""
     @State private var genre = "Fantasy"
     @State private var rating = 3
+    @State private var isShowingAlert = false
+    
+
     let genres = ["Fantasy" , "Horror" , "Kid" , "Mystery" , "Poetry" , "Romance" , "Thriller"]
     
     var body: some View {
@@ -36,14 +40,35 @@ struct AddBook: View {
                     RatingView(rating: $rating)
                 }
                 Button("Save"){
-                    let newBook = Book(name: title, author: author, genres: genre, review: review, rating: rating)
-                    modelContext.insert(newBook)
-                    dismiss()
+                    let dateFormatter =  DateFormatter()
+                    dateFormatter.dateFormat = "dd-mm-yyyy"
+                    
+                    if(Validation()){
+                        isShowingAlert = true
+                        return
+                    }
+                    else{
+                        let newBook = Book(name: title, author: author, genres: genre, review: review, rating: rating, date: dateFormatter.string(from: Date.now))
+                        modelContext.insert(newBook)
+                        dismiss()
+                    }
                     
                 }
             }
             .navigationTitle("Add Book")
+            .alert("Invalid form",
+                   isPresented: $isShowingAlert,
+                   actions: {}, 
+                   message:{ Text("Please fill all fields")})
+            
         }
+    }
+    func Validation() -> Bool{
+        if(title.isEmpty || author.isEmpty || genre.isEmpty || review.isEmpty){
+            return true
+        }
+            return false
+        
     }
 }
 
